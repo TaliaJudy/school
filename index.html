@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Random Pictures</title>
+<style>
+  #randomImage {
+    max-width: 500px;
+    max-height: 500px;
+  }
+  #buttonContainer {
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+  <h1>Random Picture Generator</h1>
+
+  <img id="randomImage" src="" alt="Random Image">
+
+  <div id="buttonContainer">
+    <button onclick="changeImage()">Generate Random Picture</button>
+  </div>
+
+  <script>
+    const imagePaths = [
+      "https://source.unsplash.com/random/500x500/?nature",
+      "https://source.unsplash.com/random/500x500/?city",
+      "https://source.unsplash.com/random/500x500/?animals",
+      "https://source.unsplash.com/random/500x500/?food",
+      "https://source.unsplash.com/random/500x500/?technology",
+      "https://source.unsplash.com/random/500x500/?space",
+      // Add more image URLs here
+    ];
+
+    function changeImage() {
+      const randomIndex = Math.floor(Math.random() * imagePaths.length);
+      const randomImageSrc = imagePaths[randomIndex];
+      document.getElementById("randomImage").src = randomImageSrc;
+    }
+
+    // Load initial image on page load
+    changeImage();
+  </script>
+
+</body>
+</html>
